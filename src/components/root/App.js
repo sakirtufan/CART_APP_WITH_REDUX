@@ -1,8 +1,14 @@
+import { Container } from "reactstrap";
+import Navi from "../navi/Navi";
+import Dashboard from "./Dashboard";
+
+
 const App = () => {
   return (
-    <div>
-
-    </div>
+    <Container>
+      <Navi/>
+      <Dashboard/>
+    </Container>
   );
 }
 
