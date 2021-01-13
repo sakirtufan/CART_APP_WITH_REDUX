@@ -6,7 +6,7 @@ import ProductList from '../products/ProductList'
 const Dashboard = () => {
   return (
     <div>
-      <Row>
+      <Row className="text-center">
         <Col xs="3">
           <CategoryList/>
         </Col>

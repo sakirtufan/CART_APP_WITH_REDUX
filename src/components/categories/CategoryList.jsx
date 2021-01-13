@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import {
-  getCategories,
-  changeCategory,
-} from "../../redux/actions/categoryActions";
+import { getCategories, changeCategory } from "../../redux/actions/categoryActions";
 import { ListGroup, ListGroupItem } from 'reactstrap'
 
 const CategoryList = (props) => {
+
   useEffect(() => {
     props.getCategories();
   }, []);
+
+  const handleChangeCategory = (categoryName) => {
+    props.changeCategory(categoryName);
+  }
 
   return (
     <div>
@@ -25,10 +27,12 @@ const CategoryList = (props) => {
       ) : (
         <ListGroup>
           {props.categories.map((category) => (
-            <ListGroupItem key={category.id}>{category.categoryName}</ListGroupItem>
+            <ListGroupItem onClick={() => handleChangeCategory(category.categoryName)} key={category.id}>{category.categoryName}</ListGroupItem>
           ))}
         </ListGroup>
+        
       )}
+      <p>CurrentCategory:{props.currentCategory.categoryName}</p>
     </div>
   );
 };

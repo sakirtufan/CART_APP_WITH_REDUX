@@ -2,8 +2,8 @@ import * as actionTypes from "./actionTypes"
 import axios from "axios"
 
 
-export const changeCategory = (category) => {
-  return { type: actionTypes.CHANGE_CATEGORY, payload: category }
+export const changeCategory = (categoryName) => {
+  return { type: actionTypes.CHANGE_CATEGORY, payload: categoryName }
 }
 
 export const getCategories = () => dispatch => {  
