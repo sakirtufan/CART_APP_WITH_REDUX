@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getCategories, changeCategory } from "../../redux/actions/categoryActions";
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { Badge, ListGroup, ListGroupItem } from 'reactstrap'
+import { getProducts } from "../../redux/actions/productActions";
 
 const CategoryList = (props) => {
 
@@ -9,13 +10,17 @@ const CategoryList = (props) => {
     props.getCategories();
   }, []);
 
-  const handleChangeCategory = (categoryName) => {
-    props.changeCategory(categoryName);
+  const selectCategory = category => {
+    props.changeCategory(category);
+    props.getProducts(category.id)
   }
+  
+  
+
 
   return (
     <div>
-      <h3>Categories</h3>
+      <h3><Badge color='warning'>Categories</Badge></h3>
 
       {props.isLoading ? (
         <p>
@@ -27,12 +32,11 @@ const CategoryList = (props) => {
       ) : (
         <ListGroup>
           {props.categories.map((category) => (
-            <ListGroupItem onClick={() => handleChangeCategory(category.categoryName)} key={category.id}>{category.categoryName}</ListGroupItem>
+            <ListGroupItem active={category.id === props.currentCategory.id} onClick={() => selectCategory(category)} key={category.id}>{category.categoryName}</ListGroupItem>
           ))}
         </ListGroup>
         
-      )}
-      <p>CurrentCategory:{props.currentCategory.categoryName}</p>
+      )}     
     </div>
   );
 };
@@ -46,6 +50,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { changeCategory, getCategories })(
+export default connect(mapStateToProps, { changeCategory, getCategories, getProducts })(
   CategoryList
 );

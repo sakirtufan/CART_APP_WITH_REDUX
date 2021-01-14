@@ -1,8 +1,9 @@
 const initialState = {
-  currentCategory:{categoryName:"Beverages"},
+  currentCategory:{},
   categories: [], 
   message:'',
-  isLoading: false
+  isLoading: false,
+  products: [],
 }
 
 export default initialState;
