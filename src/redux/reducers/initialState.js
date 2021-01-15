@@ -4,6 +4,7 @@ const initialState = {
   message:'',
   isLoading: false,
   products: [],
+  cart: [],
 }
 
 export default initialState;

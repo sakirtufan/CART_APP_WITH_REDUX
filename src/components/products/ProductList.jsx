@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Badge,Table } from "reactstrap";
 import { getProducts } from "../../redux/actions/productActions";
+import Product from "../../components/products/Product"
 
 const ProductList = (props) => {
 
@@ -23,17 +24,12 @@ const ProductList = (props) => {
             <th>Unit Price</th>
             <th>Quantity Per Unit</th>
             <th>Units In Stock</th>
+            <th>Add to Cart</th>
           </tr>
         </thead>
         <tbody>
           {props.products.map((product) => (            
-            <tr key={product.id}>              
-              <th scope="row">{product.id}</th>
-              <td>{product.productName}</td>
-              <td>{product.unitPrice}</td>
-              <td>{product.quantityPerUnit}</td>
-              <td>{product.unitsInStock}</td>
-            </tr>
+            <Product key={product.id} product={product}/>
           ))}
         </tbody>
       </Table>
