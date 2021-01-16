@@ -1,13 +1,22 @@
 import { Container } from "reactstrap";
 import Navi from "../navi/Navi";
 import Dashboard from "./Dashboard";
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
+import CartDetail from "../cart/CartDetail";
 
 
 const App = () => {
   return (
     <Container>
-      <Navi/>
-      <Dashboard/>
+      <Navi />
+      <Switch>
+        <Route path="/" exact component={Dashboard}/>
+        <Route path="/product" exact component={Dashboard}/>
+        <Route path="/cart" exact component={CartDetail}/>
+      </Switch>
     </Container>
   );
 }

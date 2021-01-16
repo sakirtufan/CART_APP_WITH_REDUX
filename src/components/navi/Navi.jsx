@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 import CartSummary from '../cart/CartSummary';
 
+
 const Navi = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
