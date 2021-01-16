@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import CartDetail from "../cart/CartDetail";
+import ProductForm from "../products/ProductForm";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" exact component={Dashboard}/>
         <Route path="/product" exact component={Dashboard}/>
         <Route path="/cart" exact component={CartDetail}/>
+        <Route path="/add" exact component={ProductForm }/>
       </Switch>
     </Container>
   );
