@@ -41,6 +41,7 @@ const CartDetail = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  
   return {
     cart: state.cartReducer,
   };

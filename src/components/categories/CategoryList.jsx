@@ -13,9 +13,7 @@ const CategoryList = (props) => {
   const selectCategory = category => {
     props.changeCategory(category);
     props.getProducts(category.id)
-  }
-  
-  
+  } 
 
 
   return (
@@ -42,8 +40,9 @@ const CategoryList = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  
   return {
-    currentCategory: state.changeCategoryReducer,
+    currentCategory: state.changeCategoryReducer.currentCategory,
     categories: state.categoryListReducer.categories,
     isLoading: state.categoryListReducer.isLoading,
     message: state.categoryListReducer.message,

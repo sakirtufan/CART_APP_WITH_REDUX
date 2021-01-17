@@ -4,13 +4,11 @@ import initialState from "./initialState";
 
 
 const categoryListReducer = (state = initialState, action) => {
-  switch (action.type) {    
-    case actionTypes.GET_CATEGORIES_START:
-      return { ...initialState, isLoading:true, message:''}
+  switch (action.type) {       
     case actionTypes.GET_CATEGORIES_SUCCESS:      
-      return { ...initialState, categories : action.payload, isLoading:false}
+      return { ...state, categories : action.payload, isLoading:false}
     case actionTypes.GET_CATEGORIES_ERROR:      
-      return { ...initialState, message: action.payload, isLoading:false}
+      return { ...state, message: action.payload, isLoading:false}
   
     default:
       return state;

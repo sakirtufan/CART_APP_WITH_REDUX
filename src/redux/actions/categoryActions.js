@@ -6,8 +6,7 @@ export const changeCategory = (category) => {
   return { type: actionTypes.CHANGE_CATEGORY, payload: category }
 }
 
-export const getCategories = () => dispatch => {  
-  dispatch({ type:actionTypes.GET_CATEGORIES_START});
+export const getCategories = () => dispatch => {    
   axios.get("http://localhost:3000/categories")
     .then(response =>      
       dispatch({ type: actionTypes.GET_CATEGORIES_SUCCESS, payload:response.data }))

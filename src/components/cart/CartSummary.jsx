@@ -14,7 +14,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import alertify from "alertifyjs";
 
-const CartSummary = (props) => {
+const CartSummary = (props) => { 
   
 
   const renderEmpty = () => {
@@ -58,6 +58,7 @@ const CartSummary = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  
   return {
     cart: state.cartReducer,
   };

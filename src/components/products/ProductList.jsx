@@ -38,10 +38,12 @@ const ProductList = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  
+  
   return {
-    currentCategory: state.changeCategoryReducer,
-    isLoading: state.productListReducer.currentCategory.isLoading,
-    message: state.productListReducer.currentCategory.message,
+    currentCategory: state.changeCategoryReducer.currentCategory,
+    isLoading: state.productListReducer.isLoading,
+    message: state.productListReducer.message,
     products: state.productListReducer.products,
   };
 };

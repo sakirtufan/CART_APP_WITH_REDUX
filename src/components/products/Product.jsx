@@ -5,6 +5,7 @@ import { addToCart } from "../../redux/actions/cartActions";
 import alertify from "alertifyjs";
 
 const Product = (props) => {
+  
 
   const addToCart = (product) => {
     props.addToCart({quantity:1,product})
@@ -31,7 +32,7 @@ const Product = (props) => {
 const mapStateToProps = (state) => {
 
   return {
-    cart: state.cartReducer,
+    cart: state.cartReducer.cart,
   };
 };
 

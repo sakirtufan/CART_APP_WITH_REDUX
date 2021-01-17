@@ -5,7 +5,6 @@ const initialState = {
   isLoading: false,
   products: [],
   cart: [],
-  savedProduct:{},
 }
 
 export default initialState;
