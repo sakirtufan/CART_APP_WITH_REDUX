@@ -617,20 +617,70 @@
       "id": 78
     },
     {
-      "productName": "samsung",
-      "category": "Seafood",
-      "unitPrice": "56",
-      "quantityPerUnit": "5",
-      "unitsInStock": "5",
-      "id": 172
+      "productName": "sako",
+      "category": "Condiments",
+      "unitPrice": "aa",
+      "quantityPerUnit": "aa",
+      "unitsInStock": "aa",
+      "id": 79
     },
     {
-      "productName": "sdfasdfda",
-      "category": "",
-      "unitPrice": "sada",
-      "quantityPerUnit": "s",
-      "unitsInStock": "a",
-      "id": 173
+      "productName": "sako",
+      "category": "Condiments",
+      "unitPrice": "aa",
+      "quantityPerUnit": "aa",
+      "unitsInStock": "aa",
+      "id": 80
+    },
+    {
+      "productName": "sako",
+      "category": "Condiments",
+      "unitPrice": "aa",
+      "quantityPerUnit": "aa",
+      "unitsInStock": "aa",
+      "id": 81
+    },
+    {
+      "productName": "sako",
+      "category": "Condiments",
+      "unitPrice": "aa",
+      "quantityPerUnit": "aa",
+      "unitsInStock": "aa",
+      "id": 82
+    },
+    {
+      "productName": "aaa",
+      "categoryId": "",
+      "unitPrice": "aa",
+      "quantityPerUnit": "aa",
+      "unitsInStock": "aa",
+      "category": "Confections",
+      "id": 83
+    },
+    {
+      "productName": "aaa",
+      "categoryId": "",
+      "unitPrice": "aa",
+      "quantityPerUnit": "aa",
+      "unitsInStock": "aa",
+      "category": "Confections",
+      "id": 84
+    },
+    {
+      "productName": "",
+      "categoryId": "",
+      "unitPrice": "",
+      "quantityPerUnit": "",
+      "unitsInStock": "",
+      "id": 85
+    },
+    {
+      "productName": "saaaa",
+      "categoryId": "Dairy Products",
+      "unitPrice": "11",
+      "quantityPerUnit": "11",
+      "unitsInStock": "11",
+      "id": 86
     }
   ],
   "categories": [

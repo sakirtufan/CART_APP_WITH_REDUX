@@ -30,7 +30,6 @@ const Product = (props) => {
 };
 
 const mapStateToProps = (state) => {
-
   return {
     cart: state.cartReducer.cart,
   };

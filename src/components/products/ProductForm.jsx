@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
-import { getCategories } from "../../redux/actions/categoryActions";
+
 import axios from "axios";
 
 const PRODUCT_INITIAL_STATE = {
-  productName:'',category:'',unitPrice:'',quantityPerUnit:'',unitsInStock:''
+  productName:'',categoryId:'',unitPrice:'',quantityPerUnit:'',unitsInStock:''
 }
 
-const ProductForm = (props) => {
+const ProductForm = (props) => {  
 
   const [product,setProduct] = useState(PRODUCT_INITIAL_STATE)
 
@@ -45,7 +44,7 @@ const ProductForm = (props) => {
           <Col md={6}>
             <FormGroup>
               <Label for="category">Category</Label>
-              <Input  onChange={onInputChange} value={product.category} type="select" name="category" id="category">
+              <Input  onChange={onInputChange} value={product.categoryId} type="select" name="categoryId" id="categoryId">
                 <option>Beverages</option>
                 <option>Condiments</option>
                 <option>Confections</option>
@@ -86,11 +85,7 @@ const ProductForm = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  
-  return {
-    
-  };
-};
 
-export default connect(mapStateToProps,)(ProductForm);
+
+
+export default ProductForm;
