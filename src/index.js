@@ -9,8 +9,6 @@ import '../node_modules/alertifyjs/build/css/alertify.min.css';
 import { BrowserRouter as Router } from "react-router-dom";
 
 
-
-
 const store = configureStore()
 
 ReactDOM.render(

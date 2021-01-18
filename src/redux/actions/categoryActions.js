@@ -10,7 +10,6 @@ export const getCategories = () => dispatch => {
   axios.get("http://localhost:3000/categories")
     .then(response =>      
       dispatch({ type: actionTypes.GET_CATEGORIES_SUCCESS, payload:response.data }))
-    .catch(error => dispatch({ type: actionTypes.GET_CATEGORIES_ERROR, payload:error }))
-  
+    .catch(error => dispatch({ type: actionTypes.GET_CATEGORIES_ERROR, payload:error }))  
 }
 

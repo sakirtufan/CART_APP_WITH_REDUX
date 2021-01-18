@@ -1,12 +1,9 @@
 {
   "products": [
     {
-      "id": 1,
-      "categoryId": 2,
-      "productName": "Chai",
-      "quantityPerUnit": "48 - 6 oz jars",
-      "unitPrice": "24",
-      "unitsInStock": 53
+      "title": "Sakir",
+      "body": "updated sakir",
+      "id": 1
     },
     {
       "id": 2,
@@ -607,39 +604,8 @@
       "quantityPerUnit": "12 boxes",
       "unitPrice": 13,
       "unitsInStock": 32
-    },
-    {
-      "productName": "sako",
-      "categoryId": "8",
-      "unitPrice": "15",
-      "quantityPerUnit": "15",
-      "unitsInStock": "15",
-      "id": 78
-    },
-    {
-      "productName": "",
-      "categoryId": "",
-      "unitPrice": "",
-      "quantityPerUnit": "",
-      "unitsInStock": "",
-      "id": 79
-    },
-    {
-      "productName": "food",
-      "categoryId": "8",
-      "unitPrice": "12",
-      "quantityPerUnit": "134",
-      "unitsInStock": "12",
-      "id": 80
-    },
-    {
-      "productName": "samsung",
-      "categoryId": "8",
-      "unitPrice": "34",
-      "quantityPerUnit": "3",
-      "unitsInStock": "3",
-      "id": 81
     }
+
   ],
   "categories": [
     {

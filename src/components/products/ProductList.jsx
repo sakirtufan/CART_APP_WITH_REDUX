@@ -25,6 +25,8 @@ const ProductList = (props) => {
             <th>Quantity Per Unit</th>
             <th>Units In Stock</th>
             <th>Add to Cart</th>
+            <th>Edit Product</th>
+            <th>Delete Product</th>
           </tr>
         </thead>
         <tbody>

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import CartDetail from "../cart/CartDetail";
 import AddProduct from "../products/AddProduct";
+import EditProduct from "../products/EditProduct";
 
 
 const App = () => {
@@ -15,9 +16,10 @@ const App = () => {
       <Navi />
       <Switch>
         <Route path="/" exact component={Dashboard}/>
-        <Route path="/product" exact component={Dashboard}/>
-        <Route path="/cart" exact component={CartDetail}/>
-        <Route path="/add" exact component={ AddProduct }/>
+        <Route path="/products" exact component={Dashboard}/>
+        <Route path="/cart"  component={ CartDetail }/>
+        <Route path="/add"  component={ AddProduct }/>
+        <Route path="/products/:id"  component={ EditProduct }/>
       </Switch>
     </Container>
   );

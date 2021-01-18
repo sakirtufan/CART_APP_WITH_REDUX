@@ -12,5 +12,4 @@ export const getProducts = (categoryId) => dispatch => {
     .then(response =>
       dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: response.data }))
     .catch(error => dispatch({ type: actionTypes.GET_PRODUCTS_ERROR, payload: error }))
-
 }

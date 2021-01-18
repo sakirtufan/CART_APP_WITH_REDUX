@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -34,15 +34,32 @@ const ProductForm = (props) => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     setError("");
-    axios
-      .post("http://localhost:3000/products/", product)
-      .then((response) => {
-        history.push("/");
+
+    if (props.editProduct.productName) {
+      axios.put(`http://localhost:3000/products/${props.editProduct.id}`,product)
+      .then(response =>{
+        history.push(`/`);
       })
       .catch((err) => {
         setError("All fields are required");
       });
+    } else {
+      axios
+        .post("http://localhost:3000/products/", product)
+        .then((response) => {
+          history.push("/");
+        })
+        .catch((err) => {
+          setError("All fields are required");
+        });
+    }
   };
+
+  useEffect(() => {
+    if (props.editProduct?.productName && props.editProduct?.categoryId) {
+      setProduct(props.editProduct);
+    }
+  }, [props.editProduct]);
 
   return (
     <div>
@@ -70,7 +87,7 @@ const ProductForm = (props) => {
           </Col>
           <Col md={6}>
             <FormGroup>
-              <Label for="category">Category</Label>
+              <Label for="categoryId">Category</Label>
               <Input
                 onChange={onInputChange}
                 type="select"

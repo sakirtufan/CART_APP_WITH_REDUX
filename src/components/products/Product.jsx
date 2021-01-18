@@ -3,6 +3,8 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/actions/cartActions";
 import alertify from "alertifyjs";
+import { BiEdit, BiTrash } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
   
@@ -24,6 +26,12 @@ const Product = (props) => {
         <button onClick={()=>addToCart(props.product)} className="btn btn-outline-secondary">
           <MdAddShoppingCart />
         </button>
+      </td>
+      <td>
+        <Link to={`/products/${props.product.id} `} className="btn btn-outline-primary"><BiEdit/></Link>
+      </td>
+      <td>
+        <button className="btn btn-outline-danger"><BiTrash/></button>
       </td>
     </tr>
   );
