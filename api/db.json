@@ -609,62 +609,12 @@
       "unitsInStock": 32
     },
     {
-      "productName": "Laptop",
-      "categoryId": 4,
-      "unitPrice": "1000",
-      "quantityPerUnit": "1",
-      "unitsInStock": "2",
+      "productName": "sako",
+      "categoryId": "8",
+      "unitPrice": "15",
+      "quantityPerUnit": "15",
+      "unitsInStock": "15",
       "id": 78
-    },
-    {
-      "productName": "sako",
-      "category": "Condiments",
-      "unitPrice": "aa",
-      "quantityPerUnit": "aa",
-      "unitsInStock": "aa",
-      "id": 79
-    },
-    {
-      "productName": "sako",
-      "category": "Condiments",
-      "unitPrice": "aa",
-      "quantityPerUnit": "aa",
-      "unitsInStock": "aa",
-      "id": 80
-    },
-    {
-      "productName": "sako",
-      "category": "Condiments",
-      "unitPrice": "aa",
-      "quantityPerUnit": "aa",
-      "unitsInStock": "aa",
-      "id": 81
-    },
-    {
-      "productName": "sako",
-      "category": "Condiments",
-      "unitPrice": "aa",
-      "quantityPerUnit": "aa",
-      "unitsInStock": "aa",
-      "id": 82
-    },
-    {
-      "productName": "aaa",
-      "categoryId": "",
-      "unitPrice": "aa",
-      "quantityPerUnit": "aa",
-      "unitsInStock": "aa",
-      "category": "Confections",
-      "id": 83
-    },
-    {
-      "productName": "aaa",
-      "categoryId": "",
-      "unitPrice": "aa",
-      "quantityPerUnit": "aa",
-      "unitsInStock": "aa",
-      "category": "Confections",
-      "id": 84
     },
     {
       "productName": "",
@@ -672,15 +622,23 @@
       "unitPrice": "",
       "quantityPerUnit": "",
       "unitsInStock": "",
-      "id": 85
+      "id": 79
     },
     {
-      "productName": "saaaa",
-      "categoryId": "Dairy Products",
-      "unitPrice": "11",
-      "quantityPerUnit": "11",
-      "unitsInStock": "11",
-      "id": 86
+      "productName": "food",
+      "categoryId": "8",
+      "unitPrice": "12",
+      "quantityPerUnit": "134",
+      "unitsInStock": "12",
+      "id": 80
+    },
+    {
+      "productName": "samsung",
+      "categoryId": "8",
+      "unitPrice": "34",
+      "quantityPerUnit": "3",
+      "unitsInStock": "3",
+      "id": 81
     }
   ],
   "categories": [

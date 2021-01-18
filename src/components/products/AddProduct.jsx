@@ -1,7 +1,8 @@
 import React from 'react'
 import ProductForm from './ProductForm'
 
-const AddProduct = () => {
+const AddProduct = (props) => {
+  
   return (
     <div>
        <h3 className="text-center m-5">Add New Product</h3>
