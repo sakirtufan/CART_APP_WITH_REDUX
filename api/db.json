@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "title": "Sakir",
-      "body": "updated sakir",
-      "id": 1
-    },
-    {
       "id": 2,
       "categoryId": 1,
       "productName": "Chang",
@@ -494,14 +489,6 @@
       "unitsInStock": 24
     },
     {
-      "id": 64,
-      "categoryId": 5,
-      "productName": "Wimmers gute Semmelknödel",
-      "quantityPerUnit": "20 bags x 4 pieces",
-      "unitPrice": 33.25,
-      "unitsInStock": 22
-    },
-    {
       "id": 65,
       "categoryId": 2,
       "productName": "Louisiana Fiery Hot Pepper Sauce",
@@ -558,14 +545,6 @@
       "unitsInStock": 26
     },
     {
-      "id": 72,
-      "categoryId": 4,
-      "productName": "Mozzarella di Giovanni",
-      "quantityPerUnit": "24 - 200 g pkgs.",
-      "unitPrice": 34.8,
-      "unitsInStock": 14
-    },
-    {
       "id": 73,
       "categoryId": 8,
       "productName": "Röd Kaviar",
@@ -590,14 +569,6 @@
       "unitsInStock": 125
     },
     {
-      "id": 76,
-      "categoryId": 1,
-      "productName": "Lakkaliköör",
-      "quantityPerUnit": "500 m",
-      "unitPrice": 18,
-      "unitsInStock": 57
-    },
-    {
       "id": 77,
       "categoryId": 2,
       "productName": "Original Frankfurter grüne Soße",
@@ -605,7 +576,6 @@
       "unitPrice": 13,
       "unitsInStock": 32
     }
-
   ],
   "categories": [
     {

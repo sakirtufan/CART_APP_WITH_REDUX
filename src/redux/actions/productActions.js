@@ -13,3 +13,14 @@ export const getProducts = (categoryId) => dispatch => {
       dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: response.data }))
     .catch(error => dispatch({ type: actionTypes.GET_PRODUCTS_ERROR, payload: error }))
 }
+
+export const removeProductFromList = (id) => dispatch => {  
+  axios.delete(`http://localhost:3000/products/${id}`)
+  .then(response => {
+    dispatch({ type:actionTypes.REMOVE_PRODUCT_FROM_LIST, payload:id})
+  })
+  .catch(error => {
+    dispatch({ type:actionTypes.REMOVE_PRODUCT_FROM_LIST_ERROR, payload:error})
+  })
+  
+}

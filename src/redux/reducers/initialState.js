@@ -3,6 +3,7 @@ const initialState = {
   categories: [], 
   message:'',
   isLoading: false,
+  deleteProductError:'',
   products: [],
   cart: [],
 }
