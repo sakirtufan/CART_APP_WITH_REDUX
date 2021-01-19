@@ -1,7 +1,12 @@
 import * as actionTypes from "./actionTypes"
 import axios from "axios"
 
-
+export const getProduct = (id) => dispatch => {
+  axios.get(`http://localhost:3000/products/${id}`)
+  .then(response =>
+    dispatch({ type: actionTypes.GET_PRODUCT_SUCCESS, payload: response.data}))
+  .catch(error => dispatch({ type: actionTypes.GET_PRODUCT_ERROR, payload: error}))  
+}
 
 export const getProducts = (categoryId) => dispatch => {
   let url = "http://localhost:3000/products"

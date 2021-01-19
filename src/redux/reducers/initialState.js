@@ -6,6 +6,7 @@ const initialState = {
   deleteProductError:'',
   products: [],
   cart: [],
+  editProduct:{},
 }
 
 export default initialState;

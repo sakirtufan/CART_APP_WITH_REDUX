@@ -1,20 +1,25 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Badge,Table } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { Badge, Table } from "reactstrap";
 import { getProducts } from "../../redux/actions/productActions";
-import Product from "../../components/products/Product"
+import Product from "../../components/products/Product";
 
 const ProductList = (props) => {
+  const currentCategory = useSelector(
+    (state) => state.changeCategoryReducer.currentCategory
+  );
+  const products = useSelector((state) => state.productListReducer.products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    props.getProducts();
-  }, []);
+    dispatch(getProducts());
+  }, [dispatch]);
 
   return (
     <div>
       <h3>
         <Badge color="warning">Products</Badge>
-        <Badge color="success">{props.currentCategory.categoryName}</Badge>
+        <Badge color="success">{currentCategory.categoryName}</Badge>
       </h3>
       <Table striped>
         <thead>
@@ -30,8 +35,8 @@ const ProductList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.products.map((product) => (            
-            <Product key={product.id} product={product}/>
+          {products.map((product) => (
+            <Product key={product.id} product={product} />
           ))}
         </tbody>
       </Table>
@@ -39,15 +44,4 @@ const ProductList = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  
-  
-  return {
-    currentCategory: state.changeCategoryReducer.currentCategory,
-    isLoading: state.productListReducer.isLoading,
-    message: state.productListReducer.message,
-    products: state.productListReducer.products,
-  };
-};
-
-export default connect(mapStateToProps, { getProducts })(ProductList);
+export default ProductList;

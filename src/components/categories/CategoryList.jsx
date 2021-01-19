@@ -20,7 +20,7 @@ const CategoryList = (props) => {
 
   useEffect(() => {
     dispatch(getCategories());
-  }, []);
+  }, [dispatch]);
 
   const selectCategory = (category) => {
     dispatch(changeCategory(category));

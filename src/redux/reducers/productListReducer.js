@@ -15,6 +15,8 @@ const productListReducer = (state = initialState, action) => {
       }
     case actionTypes.REMOVE_PRODUCT_FROM_LIST_ERROR:
       return { ...state,deleteProductError: action.payload}
+    case actionTypes.GET_PRODUCT_SUCCESS:
+      return { ...state, editProduct:{...state.editProduct, ...action.payload}}
     default:
       return state;
   }

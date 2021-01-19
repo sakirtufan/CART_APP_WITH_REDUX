@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductForm from './ProductForm'
 
-const AddProduct = (props) => {
+const AddProduct = () => {
   
   return (
     <div>
