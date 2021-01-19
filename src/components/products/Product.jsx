@@ -5,11 +5,12 @@ import { addToCart } from "../../redux/actions/cartActions";
 import { removeProductFromList } from '../../redux/actions/productActions'
 import alertify from "alertifyjs";
 import { BiEdit, BiTrash } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Product = (props) => {
 
-  const dispatch = useDispatch()  
+  const dispatch = useDispatch();  
+  const history = useHistory();
 
   const addToCart = (product) => {
     props.addToCart({quantity:1,product})
@@ -18,6 +19,8 @@ const Product = (props) => {
 
   const onHandleDelete = (product) => {
     dispatch(removeProductFromList(product.id))
+    alertify.error(`${product.productName} removed from product list`)
+    history.push('/')
   }
 
 
