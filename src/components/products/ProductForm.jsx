@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, updateProduct } from "../../redux/actions/productActions";
 
-const PRODUCT_INITIAL_STATE = {
+const PRODUCT = {
   productName: "",
   categoryId: "",
   unitPrice: "",
@@ -13,10 +13,10 @@ const PRODUCT_INITIAL_STATE = {
 };
 
 const ProductForm = (props) => {
-  const [product, setProduct] = useState(PRODUCT_INITIAL_STATE);
-  const options = useSelector((state) => state.categoryListReducer.options);
-  const [error, setError] = useState("");
+  const [product, setProduct] = useState(PRODUCT);
+  const options = useSelector((state) => state.categoryListReducer.options); 
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const onInputChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -24,26 +24,11 @@ const ProductForm = (props) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    setError("");
 
     if (props.editProduct?.productName) {
-      axios
-        .put(`http://localhost:3000/products/${props.editProduct.id}`, product)
-        .then((response) => {
-          history.push(`/`);
-        })
-        .catch((err) => {
-          setError("All fields are required");
-        });
+      dispatch(updateProduct(props.editProduct, product, history.push));
     } else {
-      axios
-        .post("http://localhost:3000/products/", product)
-        .then((response) => {
-          history.push("/");
-        })
-        .catch((err) => {
-          setError("All fields are required");
-        });
+      dispatch(addProduct(product, history.push));
     }
   };
 
@@ -56,12 +41,6 @@ const ProductForm = (props) => {
   return (
     <div>
       <Form onSubmit={onFormSubmit}>
-        {error && (
-          <div class="alert alert-danger" role="alert">
-            {error}
-          </div>
-        )}
-
         <Row form>
           <Col md={6}>
             <FormGroup>

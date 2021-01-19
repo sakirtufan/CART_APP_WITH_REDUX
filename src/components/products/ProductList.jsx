@@ -18,8 +18,8 @@ const ProductList = (props) => {
   return (
     <div>
       <h3>
-        <Badge color="warning">Products</Badge>
-        <Badge color="success">{currentCategory.categoryName}</Badge>
+        <Badge className='w-75 p-3' color="warning">Products</Badge>
+        <Badge className='p-3' color="success">{currentCategory.categoryName}</Badge>
       </h3>
       <Table striped>
         <thead>

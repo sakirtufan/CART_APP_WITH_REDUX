@@ -30,7 +30,7 @@ const CategoryList = (props) => {
   return (
     <div>
       <h3>
-        <Badge color="warning">Categories</Badge>
+        <Badge color="warning" className="w-100 p-3">Categories</Badge>
       </h3>
 
       {isLoading ? (

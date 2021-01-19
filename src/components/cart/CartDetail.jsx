@@ -24,7 +24,7 @@ const CartDetail = () => {
             <th>Unit Price</th>
             <th>Quantity</th>
             <th>
-              <MdRemoveShoppingCart size="2em" />
+              <MdRemoveShoppingCart size="3em" />
             </th>
           </tr>
         </thead>
