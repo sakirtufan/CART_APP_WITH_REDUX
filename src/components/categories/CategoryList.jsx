@@ -1,26 +1,39 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { getCategories, changeCategory } from "../../redux/actions/categoryActions";
-import { Badge, ListGroup, ListGroupItem } from 'reactstrap'
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCategories,
+  changeCategory,
+} from "../../redux/actions/categoryActions";
+import { Badge, ListGroup, ListGroupItem } from "reactstrap";
 import { getProducts } from "../../redux/actions/productActions";
 
 const CategoryList = (props) => {
+  const currentCategory = useSelector(
+    (state) => state.changeCategoryReducer.currentCategory
+  );
+  const categories = useSelector(
+    (state) => state.categoryListReducer.categories
+  );
+  const isLoading = useSelector((state) => state.categoryListReducer.isLoading);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    props.getCategories();
+    dispatch(getCategories());
   }, []);
 
-  const selectCategory = category => {
-    props.changeCategory(category);
-    props.getProducts(category.id)
-  } 
-
+  const selectCategory = (category) => {
+    dispatch(changeCategory(category));
+    dispatch(getProducts(category.id));
+  };
 
   return (
     <div>
-      <h3><Badge color='warning'>Categories</Badge></h3>
+      <h3>
+        <Badge color="warning">Categories</Badge>
+      </h3>
 
-      {props.isLoading ? (
+      {isLoading ? (
         <p>
           <img
             src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif"
@@ -29,26 +42,19 @@ const CategoryList = (props) => {
         </p>
       ) : (
         <ListGroup>
-          {props.categories.map((category) => (
-            <ListGroupItem active={category.id === props.currentCategory.id} onClick={() => selectCategory(category)} key={category.id}>{category.categoryName}</ListGroupItem>
+          {categories.map((category) => (
+            <ListGroupItem
+              active={category.id === currentCategory.id}
+              onClick={() => selectCategory(category)}
+              key={category.id}
+            >
+              {category.categoryName}
+            </ListGroupItem>
           ))}
         </ListGroup>
-        
-      )}     
+      )}
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  
-  return {
-    currentCategory: state.changeCategoryReducer.currentCategory,
-    categories: state.categoryListReducer.categories,
-    isLoading: state.categoryListReducer.isLoading,
-    message: state.categoryListReducer.message,
-  };
-};
-
-export default connect(mapStateToProps, { changeCategory, getCategories, getProducts })(
-  CategoryList
-);
+export default CategoryList;
