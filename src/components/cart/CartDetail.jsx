@@ -6,6 +6,7 @@ import { removeFromCart } from "../../redux/actions/cartActions";
 import alertify from "alertifyjs";
 
 const CartDetail = () => {
+  
   const cart = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
 
@@ -35,9 +36,8 @@ const CartDetail = () => {
               <td>{cartItem.product.unitPrice}</td>
               <td>{cartItem.quantity}</td>
               <td>
-                <button className="btn btn-danger">
-                  <MdDeleteForever
-                    onClick={() => deleteFromCart(cartItem.product)}
+                <button onClick={() => deleteFromCart(cartItem.product)} className="btn btn-danger">
+                  <MdDeleteForever                   
                     size="1.5em"
                   ></MdDeleteForever>
                 </button>
