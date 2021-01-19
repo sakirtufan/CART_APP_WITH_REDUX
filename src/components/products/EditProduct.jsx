@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import ProductForm from './ProductForm'
 
 const EditProduct = (props) => {
   
-  const { id } = props.match.params;
+  const { id } =  useParams();
   const [editProduct,setEditProduct] = useState({})
+
 
 useEffect(() => {
   axios.get(`http://localhost:3000/products/${id}`)
