@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const PRODUCT_INITIAL_STATE = {
   productName: "",
@@ -12,18 +13,8 @@ const PRODUCT_INITIAL_STATE = {
 };
 
 const ProductForm = (props) => {
-  const options = [
-    { id: 1, categoryName: "Beverages" },
-    { id: 2, categoryName: "Condiments" },
-    { id: 3, categoryName: "Confections" },
-    { id: 4, categoryName: "Dairy Products" },
-    { id: 5, categoryName: "Grains/Cereals" },
-    { id: 6, categoryName: "Meat/Poultry" },
-    { id: 7, categoryName: "Produce" },
-    { id: 8, categoryName: "Seafood" },
-  ];
-
   const [product, setProduct] = useState(PRODUCT_INITIAL_STATE);
+  const options = useSelector((state) => state.categoryListReducer.options);
   const [error, setError] = useState("");
   const history = useHistory();
 
@@ -36,13 +27,14 @@ const ProductForm = (props) => {
     setError("");
 
     if (props.editProduct?.productName) {
-      axios.put(`http://localhost:3000/products/${props.editProduct.id}`,product)
-      .then(response =>{
-        history.push(`/`);
-      })
-      .catch((err) => {
-        setError("All fields are required");
-      });
+      axios
+        .put(`http://localhost:3000/products/${props.editProduct.id}`, product)
+        .then((response) => {
+          history.push(`/`);
+        })
+        .catch((err) => {
+          setError("All fields are required");
+        });
     } else {
       axios
         .post("http://localhost:3000/products/", product)
